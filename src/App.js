@@ -8,7 +8,7 @@ function App() {
     <div id="dashboard">
         <DashboardEmbed />
     </div>
-    <img src="https://storage.googleapis.com/snow-data-artifacts/SnoCountry.png"/>
+    <a href="https://github.com/slopp/embed-snow">Information on Data Pipeline, Architecture, and Source Code</a>
   </div>
    
   );
