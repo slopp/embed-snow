@@ -20,9 +20,11 @@ app.get("/auth", (req, res) => {
         last_name: 'User',
         permissions: ['see_user_dashboards', 'see_lookml_dashboards', 'access_data', 'see_looks'],
         models: ['snow'],
+        group_ids: [],
         embed_url: "/embed/dashboards/1",
-        force_logout_login: false,
-        session_length: 86400
+        force_logout_login: true,
+        session_length: 86400,
+        access_filters: {}
     };
     console.log("Signing URL")
     var url = created_signed_embed_url(options) 
@@ -64,7 +66,7 @@ function created_signed_embed_url(options) {
    var json_last_name = JSON.stringify(options.last_name);
    var json_permissions = JSON.stringify(options.permissions);
    var json_models = JSON.stringify(options.models);
-   var json_group_ids = JSON.stringify(options.group_ids);
+   var json_group_ids = JSON.stringify(options.group_ids || "");
    var json_external_group_id = JSON.stringify(options.external_group_id || "");
    var json_user_attributes = JSON.stringify(options.user_attributes || {});
    var json_access_filters = JSON.stringify(options.access_filters);
