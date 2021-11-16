@@ -18,10 +18,10 @@ app.get("/auth", (req, res) => {
         external_user_id: '8',
         first_name: 'Embed',
         last_name: 'User',
-        permissions: ['see_user_dashboards', 'see_lookml_dashboards', 'access_data', 'see_looks'],
+        permissions: ['see_user_dashboards', 'see_lookml_dashboards', 'access_data', 'see_looks', 'see_drill_overlay'],
         models: ['snow'],
         group_ids: [],
-        embed_url: "/embed/dashboards/1",
+        embed_url: "/embed/dashboards-next/1",
         force_logout_login: true,
         session_length: 86400,
         access_filters: {}

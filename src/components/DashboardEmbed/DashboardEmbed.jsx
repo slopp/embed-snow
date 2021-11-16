@@ -32,6 +32,7 @@ export const DashboardEmbed = () => {
                 //el.innerHTML = ""
                 LookerEmbedSDK.init('dev.looker.loppdev.com', "/auth")
                 const embed = LookerEmbedSDK.createDashboardWithId(1)
+                  .withNext()
                   .appendTo(el)
                 embed
                   .build()
@@ -43,22 +44,8 @@ export const DashboardEmbed = () => {
       )
 
     return (
-        <ComponentsProvider>
-          <Layout hasAside height="100%">
-            <Section height="100%" px="small">
-              <>
-                <Box py="5px">
-                  
-                    <Button
-                      onClick={runDashboard}
-                    >
-                      Run Dashboard
-                    </Button>
-                </Box>
+        <ComponentsProvider>    
                 <div width="100%" ref={embedCtrRef} />
-              </>
-            </Section>
-          </Layout>
         </ComponentsProvider>
       )
 }
